@@ -1,0 +1,54 @@
+{
+    "invoice": {
+      "reference_invoice_no": "I001-25/40912",
+      "vat_invoice_no": "250010039860",
+      "invoice_date": "25/08/2025",
+      "print_date": "26-08-2025 13:36",
+      "page": "1/1",
+      "user": "1119"
+    },
+    "patient": {
+      "name": "Hamedah -- Zahrani (053565)",
+      "acc_name": "100001",
+      "policy_no": "514891001-Bupa-petroarabighcompany-(VIP)",
+      "vat_no": "300149066610003",
+      "patient_id": "1012711493",
+      "card_no": "37529611"
+    },
+    "admission": {
+      "date": "25-08-2025",
+      "time": "06:23"
+    },
+    "discharge": {
+      "date": "25-08-2025",
+      "time": "06:23"
+    },
+    "room": {
+      "room_no": "bed0101",
+      "class": "1st class",
+      "length_of_stay_days": 0,
+      "consultant": "TAWFIK AL-TAISI"
+    },
+    "items": [
+      {
+        "item_no": "300056",
+        "package": "YAG LASER POSTERIOR CAPSULOTOMY (ONE EYE)",
+        "gross": 1200.00,
+        "discount": 480.00,
+        "discount_percent": 40,
+        "total": 720.00,
+        "vat_amount": 108.00,
+        "net": 628.00
+      }
+    ],
+    "totals": {
+      "gross": 1200.00,
+      "discount": 480.00,
+      "discount_percent": 40,
+      "total": 720.00,
+      "vat_amount": 108.00,
+      "patient_share": 0.00,
+      "net_amount": 828.00
+    }
+  }
+  
