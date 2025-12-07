@@ -17,7 +17,35 @@ const leftTableCell: React.CSSProperties = {
   textAlign: "left",
 };
 
-const ServiceAndMedicationApprovalSection: React.FC = ({service_code, unit_price, qty}) => {
+const sectionStyle: React.CSSProperties = {
+  margin: "50px 0",
+};
+const rowStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "space-between",
+  marginBottom: 8,
+  alignItems: "flex-start",
+};
+const labelStyle: React.CSSProperties = {
+  fontWeight: 700,
+  marginRight: 8,
+};
+
+const ServiceAndMedicationApprovalSection: React.FC = ({
+  qty,
+  service_code,
+  unit_price,
+
+  total,
+  vat,
+  bill_no,
+  description,
+  discount,
+  gross,
+  invoice_date,
+  net,
+  net_with_vat,
+}) => {
   return (
     <div
       style={{
@@ -27,6 +55,7 @@ const ServiceAndMedicationApprovalSection: React.FC = ({service_code, unit_price
         color: "#000",
       }}
     >
+      <hr style={{ margin: "100px 0" }} />
       <div style={{ marginBottom: 8, fontSize: "10px" }}>
         Suggestive Line(s) of managment Kindly , enumerate the recommended
         investigations , and/or procedures For outpatient approvals only :
@@ -120,10 +149,61 @@ const ServiceAndMedicationApprovalSection: React.FC = ({service_code, unit_price
           </tr>
         </tbody>
       </table>
+
+      <div style={sectionStyle}>
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Total:</span>
+            <span>{total}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>VAT:</span>
+            <span>{vat}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Description:</span>
+            <span>{description}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>Bill number:</span>
+            <span>{bill_no}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Discount:</span>
+            <span>{discount}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>Gross:</span>
+            <span>{gross}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Invoice date:</span>
+            <span>{invoice_date}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>Net:</span>
+            <span>{net}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Net with Vat:</span>
+            <span>{net_with_vat}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default ServiceAndMedicationApprovalSection;
-
-

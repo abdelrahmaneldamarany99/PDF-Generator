@@ -164,7 +164,7 @@ const DiagnosisAndPatientScreening: React.FC = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: "20px",
@@ -181,7 +181,7 @@ const DiagnosisAndPatientScreening: React.FC = () => {
       >
         <div style={{ fontWeight: 700, marginBottom: "4px" }}>مجمع حسين علي محسن السقاف الطبي</div>
         <div style={{ fontWeight: 700 }}>Hussein Ali Mohsen Al-Saggaf Medical Complex</div>
-      </div>
+      </div> */}
     </div>
   );
 };

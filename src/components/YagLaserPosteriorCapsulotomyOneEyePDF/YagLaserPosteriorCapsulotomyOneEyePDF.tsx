@@ -19,12 +19,34 @@ const leftAlignCellStyle: React.CSSProperties = {
   textAlign: "left",
 };
 
+const sectionStyle: React.CSSProperties = {
+  margin: "50px 0",
+};
+const rowStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "space-between",
+  marginBottom: 8,
+  alignItems: "flex-start",
+};
+const labelStyle: React.CSSProperties = {
+  fontWeight: 700,
+  marginRight: 8,
+};
+
 const YagLaserPosteriorCapsulotomyOneEyePDF: React.FC = ({
-  invoice_date,
-  gross,
   discount,
+  gross,
+  invoice_date,
   net,
   vat,
+
+  bill_no,
+  description,
+  net_with_vat,
+  qty,
+  service_code,
+  total,
+  unit_price,
 }) => {
   const { patientInvoice } = useContext(PDFContext);
   const { doctor } = patientInvoice[0];
@@ -235,6 +257,59 @@ const YagLaserPosteriorCapsulotomyOneEyePDF: React.FC = ({
           </span>
         </div>
       </div>
+      <div style={sectionStyle}>
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Total:</span>
+            <span>{total}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>VAT:</span>
+            <span>{vat}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Description:</span>
+            <span>{description}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>Bill number:</span>
+            <span>{bill_no}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Discount:</span>
+            <span>{discount}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>Gross:</span>
+            <span>{gross}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Invoice date:</span>
+            <span>{invoice_date}</span>
+          </div>
+          <div>
+            <span style={labelStyle}>Net:</span>
+            <span>{net}</span>
+          </div>
+        </div>
+
+        <div style={rowStyle}>
+          <div>
+            <span style={labelStyle}>Net with Vat:</span>
+            <span>{net_with_vat}</span>
+          </div>
+        </div>
+      </div>
+      <hr style={{ margin: "100px 0" }} />
     </div>
   );
 };

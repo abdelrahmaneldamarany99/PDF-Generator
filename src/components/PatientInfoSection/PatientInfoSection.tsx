@@ -6,7 +6,7 @@ import { PDFContext } from "../../context/PDFContext";
   Renders the patient information section of the invoice.
 */
 interface Props {
-  data: PatientInfo;
+  data?: PatientInfo;
 }
 
 export const PatientInfoSection: React.FC<Props> = () => {
@@ -67,6 +67,7 @@ export const PatientInfoSection: React.FC<Props> = () => {
           </p>
         </div>
       </div>
+      <hr style={{ margin: "100px 0" }} />
     </div>
   );
 };

@@ -81,9 +81,10 @@ function App() {
         <div style={{ padding: "16px" }}>
           <PDFDownloadLink
             document={
-              <PDFContextProvider>
-                <FullPagePDF />
-              </PDFContextProvider>
+              <FullPagePDF
+                siteHeader={siteHeader}
+                patientInvoice={patientInvoice}
+              />
             }
             fileName="invoice-report.pdf"
           >
@@ -102,7 +103,7 @@ function App() {
                 }}
                 disabled={loading}
               >
-                {loading ? "Generating PDF..." : "Download PDF"}
+                {loading ? "Please Wait..." : "Download PDF"}
               </button>
             )}
           </PDFDownloadLink>
@@ -116,7 +117,7 @@ function App() {
         // state={state.patientInvoice[0]}
         />
         {/* <InvoicePreview invoice={invoiceData} /> */}
-        {patientInvoice[0].invoiceItem.map((invoice) => (
+        {patientInvoice[0].invoiceItem.map((invoice: any) => (
           <YagLaserPosteriorCapsulotomyOneEyePDF
             key={invoice.service_code}
             {...invoice}
@@ -127,7 +128,7 @@ function App() {
         // state={state.patientInvoice}
         />
         <AttendingPhysicianForm />
-        {patientInvoice[0].invoiceItem.map((invoice) => (
+        {patientInvoice[0].invoiceItem.map((invoice: any) => (
           <ServiceAndMedicationApprovalSection
             key={invoice.service_code}
             {...invoice}

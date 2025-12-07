@@ -35,6 +35,7 @@ const CaseManagementForm: React.FC = () => {
         fontSize: "12px",
         color: "#000",
         padding: "20px",
+        marginTop:"200px"
       }}
     >
       <div style={{ marginBottom: 16 }}>
